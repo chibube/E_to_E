@@ -20,7 +20,7 @@ def save_object(file_path, obj):
 
     except Exception as e:
         raise CustomException(e, sys)
-'''    
+   
 def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     try:
         report = {}
@@ -32,7 +32,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             gs = GridSearchCV(model, para, cv=3)
             gs.fit(X_train, y_train)
 
-            model.set_param(**gs.best_params_)
+            model.set_params(**gs.best_params_)
             model.fit(X_train, y_train)
 
             y_train_pred = model.predict(X_train)
@@ -57,4 +57,3 @@ def load_object(file_path):
     except Exception as e:
         raise CustomException(e,sys)
 
-'''
